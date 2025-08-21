@@ -7,6 +7,7 @@ import { ENV } from "./config/env";
 import authRoutes from "./routes/authRoutes";
 import taskRoutes from "./routes/taskRoutes";
 import { errorHandler, notFound } from "./middleware/errorHandler";
+import { swaggerDocs } from "./swagger";
 
 const app = express();
 
@@ -21,10 +22,12 @@ app.use("/api/tasks", taskRoutes);
 
 // Health check
 app.get("/health", (_req, res) => res.json({ status: "ok" }));
+swaggerDocs(app);
 
 // 404 + Error handler
 app.use(notFound);
 app.use(errorHandler);
+
 
 // MongoDB connection function
 export async function connectDB() {
