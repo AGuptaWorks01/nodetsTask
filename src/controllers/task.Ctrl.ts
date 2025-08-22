@@ -7,7 +7,6 @@ export async function createTask(req: Request, res: Response) {
     const parse = createTaskSchema.safeParse(req.body);
     if (!parse.success) return res.status(400).json({ error: parse.error.flatten() });
 
-
     const { title, description, status } = parse.data;
     const userId = req.user!.id;
     const task = await Task.create({ user: userId, title, description, status });

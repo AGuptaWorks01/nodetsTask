@@ -102,6 +102,23 @@ paths:
           description: Task created
 
   /tasks/{id}:
+    get:               # 👈 Added GET by ID
+      tags: [Tasks]
+      summary: Get a task by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Task found
+        "404":
+          description: Task not found
+
     put:
       tags: [Tasks]
       summary: Update a task

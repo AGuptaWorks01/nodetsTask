@@ -6,5 +6,5 @@ import { Express } from "express";
 export const swaggerDocs = (app: Express) => {
     const swaggerDocument = YAML.load(path.join(__dirname, "../swagger.yaml"));
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-    console.log("📑 Swagger running at http://localhost:4000/api-docs");
+    console.log("Swagger running at http://localhost:4000/api-docs");
 };

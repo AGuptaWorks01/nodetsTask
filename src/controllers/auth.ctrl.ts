@@ -11,10 +11,11 @@ export async function register(req: Request, res: Response) {
         const exists = await User.findOne({ email });
         if (exists) return res.status(409).json({ error: 'email already registered' });
 
+        await User.create({ email, password });
 
-        const user = await User.create({ email, password });
-        const token = jwt.sign({ id: user._id, email: user.email }, ENV.JWT_SECRET, { expiresIn: '7d' });
-        res.status(201).json({ token });
+        // const user = await User.create({ email, password });
+        // const token = jwt.sign({ id: user._id, email: user.email }, ENV.JWT_SECRET, { expiresIn: '7d' });
+        res.status(201).json({ message: "User registered successfully" });
     } catch (e: any) {
         res.status(500).json({ error: e.message });
     }
