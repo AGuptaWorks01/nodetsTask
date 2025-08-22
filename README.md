@@ -62,14 +62,14 @@ Swagger UI is available at:
 
 Example OpenAPI Endpoints
 
-# Auth
-
-POST /api/auth/register → Register a new user
-POST /api/auth/login → Login and get JWT
-
-# Tasks
-GET /api/tasks → Get all tasks (JWT required)
-POST /api/tasks → Create a new task (JWT required)
-GET /api/tasks/{id} → Get task by ID (JWT required)
-PUT /api/tasks/{id} → Update task (JWT required)
-DELETE /api/tasks/{id} → Delete task (JWT required)
+# Auth    
+   
+POST /api/auth/register → Register a new user    
+POST /api/auth/login → Login and get JWT    
+    
+# Tasks    
+GET /api/tasks → Get all tasks (JWT required)    
+POST /api/tasks → Create a new task (JWT required)    
+GET /api/tasks/{id} → Get task by ID (JWT required)   
+PUT /api/tasks/{id} → Update task (JWT required)    
+DELETE /api/tasks/{id} → Delete task (JWT required)    
