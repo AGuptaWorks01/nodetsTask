@@ -42,9 +42,9 @@ npm install
 
 ### 3. Setup Environment Variables
 
-PORT=4000
-MONGO_URI=mongodb://localhost:27017/taskdb
-JWT_SECRET=your_jwt_secret
+PORT=4000    
+MONGO_URI=mongodb://localhost:27017/taskdb    
+JWT_SECRET=your_jwt_secret    
 
 
 ### 4. Run the server (development)
